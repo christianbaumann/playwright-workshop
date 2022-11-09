@@ -13,7 +13,7 @@ public class clickLink {
     private Playwright playwright = Playwright.create();
     private BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions().setHeadless(false);
     private Browser browser;
-    protected Page page;
+    private Page page;
 
     @Test
     void clickLink() {
@@ -34,7 +34,7 @@ public class clickLink {
 
         page.navigate("https://the-internet.herokuapp.com/");
 
-        page.locator("text=\"Broken Images\"").click();
+        page.locator("text=Broken Images").click();
 
         browser.close();
     }
@@ -46,9 +46,9 @@ public class clickLink {
 
         page.navigate("https://the-internet.herokuapp.com/");
 
-        page.locator("text=\"Broken Images\"").click();
+        page.locator("text=Broken Images").click();
 
-        assertThat(page.getByText("Broken Images")).isVisible();
+        assertThat(page.locator("text=Broken Images")).isVisible();
 
         browser.close();
     }
