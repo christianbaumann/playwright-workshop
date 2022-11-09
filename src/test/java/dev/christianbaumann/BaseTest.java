@@ -15,7 +15,7 @@ public class BaseTest {
     protected Page page;
 
     @BeforeEach
-    void beforeEach() {
+    void startBrowser() {
         System.out.println("----This is the before Each method");
 
         launchOptions.setHeadless(false);
@@ -24,10 +24,9 @@ public class BaseTest {
     }
 
     @AfterEach
-    void afterEach() {
+    void closeBrowser() {
         System.out.println("----This is the after Each method");
 
         browser.close();
-
     }
 }
