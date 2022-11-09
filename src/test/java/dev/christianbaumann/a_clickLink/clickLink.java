@@ -6,6 +6,8 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.Test;
 
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
 public class clickLink {
 
     private Playwright playwright = Playwright.create();
@@ -14,14 +16,27 @@ public class clickLink {
     protected Page page;
 
     @Test
-    void clickLink(){
+    void clickLink() {
         browser = playwright.chromium().launch(launchOptions);
         page = browser.newPage();
 
-        page.navigate("https://demoqa.com/links");
+        page.navigate("https://the-internet.herokuapp.com/");
 
-        // click here
+        // implement click here
 
         browser.close();
     }
+
+    @Test
+    void clickLinkViaText() {
+        browser = playwright.chromium().launch(launchOptions);
+        page = browser.newPage();
+
+        page.navigate("https://the-internet.herokuapp.com/");
+
+        page.locator("text=\"Broken Images\"").click();
+
+        browser.close();
+    }
+
 }
