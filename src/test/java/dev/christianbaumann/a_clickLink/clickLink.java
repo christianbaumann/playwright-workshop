@@ -39,4 +39,18 @@ public class clickLink {
         browser.close();
     }
 
+    @Test
+    void clickLinkViaTextAndVerify() {
+        browser = playwright.chromium().launch(launchOptions);
+        page = browser.newPage();
+
+        page.navigate("https://the-internet.herokuapp.com/");
+
+        page.locator("text=\"Broken Images\"").click();
+
+        assertThat(page.getByText("Broken Images")).isVisible();
+
+        browser.close();
+    }
+
 }
