@@ -3,6 +3,8 @@ package dev.christianbaumann.solutions;
 import dev.christianbaumann.Base;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class DropdownTest extends Base {
 
     @Test
@@ -11,9 +13,9 @@ public class DropdownTest extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/dropdown");
 
-        // Select a value from the dropdown
+        page.locator("#dropdown").selectOption("2");
 
-        // Verify the value selection
+        assertEquals("selected", page.locator("//*[@id='dropdown']/option[3]").getAttribute("selected"));
 
     }
 }

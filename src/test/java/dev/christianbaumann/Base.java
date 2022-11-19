@@ -21,6 +21,7 @@ public class Base {
     void setup() {
         browser = playwright.chromium().launch(launchOptions);
         context = browser.newContext(contextOptions);
+        context.setDefaultTimeout(5000);
     }
 
     @AfterEach
