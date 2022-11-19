@@ -16,7 +16,7 @@ public class BaseTest {
 
     @BeforeEach
     void startBrowser() {
-        System.out.println("----This is the before Each method");
+//        System.out.println("----This is the before Each method");
 
         launchOptions.setHeadless(false);
         browser = playwright.chromium().launch(launchOptions);
@@ -25,7 +25,7 @@ public class BaseTest {
 
     @AfterEach
     void closeBrowser() {
-        System.out.println("----This is the after Each method");
+//        System.out.println("----This is the after Each method");
 
         browser.close();
     }
