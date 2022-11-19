@@ -98,8 +98,7 @@ public class ClickLink {
 
         page.locator("text=Broken Images").click();
 
-//        assertTrue(page.locator("text=Agile Testing Days").isVisible());
-        assertTrue(page.locator("text=Broken Images").isVisible());
+        assertTrue(page.locator("text=Agile Testing Days").isVisible());
     }
 
 }
