@@ -14,9 +14,9 @@ public class ButtonTest extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/login");
 
-        // Click the Login-button
+        page.locator("//*[@id='login']/button").click();
 
-        // Verify that the login failed
+        assertTrue(page.locator("#flash").textContent().contains("Your username is invalid!"));
 
     }
 }
