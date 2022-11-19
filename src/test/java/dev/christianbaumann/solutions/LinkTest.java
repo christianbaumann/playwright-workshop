@@ -3,6 +3,8 @@ package dev.christianbaumann.solutions;
 import dev.christianbaumann.Base;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class LinkTest extends Base {
 
     @Test
@@ -11,7 +13,8 @@ public class LinkTest extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/");
 
-        // Click "Checkboxes"
+        page.locator("text=Checkboxes").click();
 
+        assertTrue(page.locator("text=Checkboxes").isVisible());
     }
 }
