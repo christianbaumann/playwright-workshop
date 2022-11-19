@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>playwright-workshop</name>
-    <url>http://www.christianbaumann.dev</url>
+    <url>https://www.christianbaumann.dev</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

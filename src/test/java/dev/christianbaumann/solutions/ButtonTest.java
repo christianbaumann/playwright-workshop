@@ -9,6 +9,7 @@ public class ButtonTest extends Base {
 
     @Test
     void clickButton() {
+
         page = context.newPage();
 
         page.navigate("https://the-internet.herokuapp.com/login");

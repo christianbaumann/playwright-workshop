@@ -9,6 +9,7 @@ public class LinkTest extends Base {
 
     @Test
     void clickLink() {
+
         page = context.newPage();
 
         page.navigate("https://the-internet.herokuapp.com/");
@@ -16,5 +17,6 @@ public class LinkTest extends Base {
         page.locator("text=Checkboxes").click();
 
         assertTrue(page.locator("text=Checkboxes").isVisible());
+
     }
 }

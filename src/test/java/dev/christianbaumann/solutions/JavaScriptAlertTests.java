@@ -5,10 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class JavaScriptAlerts extends Base {
+public class JavaScriptAlertTests extends Base {
 
     @Test
     void triggerJavaScriptAlert() {
+
         page = context.newPage();
 
         page.navigate("https://the-internet.herokuapp.com/javascript_alerts");
@@ -21,6 +22,7 @@ public class JavaScriptAlerts extends Base {
 
     @Test
     void triggerJavaScriptConfirm() {
+
         page = context.newPage();
 
         page.navigate("https://the-internet.herokuapp.com/javascript_alerts");
@@ -34,6 +36,7 @@ public class JavaScriptAlerts extends Base {
 
     @Test
     void triggerJavaScriptPrompt() {
+
         String textToEnter = "Agile Testing Days";
 
         page = context.newPage();
