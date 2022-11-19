@@ -3,6 +3,8 @@ package dev.christianbaumann.solutions;
 import dev.christianbaumann.Base;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class TextTest extends Base {
 
     @Test
@@ -11,11 +13,13 @@ public class TextTest extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/login");
 
-        // Enter username & password via label
+        page.getByLabel("Username").type("tomsmith");
 
-        // Click the Login-button
+        page.getByLabel("Password").type("SuperSecretPassword!");
 
-        // Verify the successful login
+        page.locator("//*[@id='login']/button").click();
+
+        assertTrue(page.locator("#flash").textContent().contains("You logged into a secure area!"));
 
     }
 }
