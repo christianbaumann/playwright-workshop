@@ -3,6 +3,8 @@ package dev.christianbaumann.solutions;
 import dev.christianbaumann.Base;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class JavaScriptAlerts extends Base {
 
     @Test
@@ -11,12 +13,10 @@ public class JavaScriptAlerts extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/javascript_alerts");
 
-        // Click “JS Alert”-button
+        page.onDialog(dialog -> dialog.accept());
+        page.locator("//ul/li[1]/button").click();
 
-        // Confirm popup
-
-        // Verify
-        
+        assertEquals("You successfully clicked an alert", page.locator("#result").textContent());
     }
 
     @Test
@@ -25,25 +25,25 @@ public class JavaScriptAlerts extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/javascript_alerts");
 
-        // Click “JS Confirm”-button
-        
-        // Confirm popup
-        
-        // Verify
+        page.onDialog(dialog -> dialog.accept());
+        page.locator("//ul/li[2]/button").click();
+
+        assertEquals("You clicked: Ok", page.locator("#result").textContent());
         
     }
 
     @Test
     void triggerJavaScriptPrompt() {
+        String textToEnter = "Agile Testing Days";
+
         page = context.newPage();
 
         page.navigate("https://the-internet.herokuapp.com/javascript_alerts");
 
-        // Click “JS Prompt”-button
-        
-        // Enter some value & confirm
+        page.onDialog(dialog -> dialog.accept(textToEnter));
+        page.locator("//ul/li[3]/button").click();
 
-        // Verify
+        assertEquals("You entered: " + textToEnter, page.locator("#result").textContent());
         
     }
 }
