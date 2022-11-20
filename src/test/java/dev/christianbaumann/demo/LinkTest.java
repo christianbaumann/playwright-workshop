@@ -21,7 +21,7 @@ public class LinkTest extends Base {
         /*
         // Wait, this was too fast?
         // debug
-        // page.pause()
+        // page.pause() -> show recorder
         */
 
         /*
