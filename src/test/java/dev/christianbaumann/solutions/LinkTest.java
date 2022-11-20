@@ -14,9 +14,9 @@ public class LinkTest extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/");
 
-        page.locator("text=Checkboxes").click();
+        page.getByText("Checkboxes").click();
 
-        assertTrue(page.locator("text=Checkboxes").isVisible());
+        assertTrue(page.getByText("Checkboxes").isVisible());
 
     }
 }

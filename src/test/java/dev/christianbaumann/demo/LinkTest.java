@@ -14,13 +14,19 @@ public class LinkTest extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/");
 
-        Locator locatorBrokenImages = page.locator("text=Broken Images");
+        Locator locatorBrokenImages = page.getByText("Broken Images");
 
         locatorBrokenImages.click();
 
         /*
+        // Wait, this was too fast?
+        // debug
+        // page.pause()
+        */
+
+        /*
         // Can be shortened to:
-        // page.locator("text=Broken Images").click();
+        // page.getByText("Broken Images").click();
         */
 
         /*
@@ -72,9 +78,9 @@ public class LinkTest extends Base {
 
         page.navigate("https://the-internet.herokuapp.com/");
 
-        page.locator("text=Broken Images").click();
+        page.getByText("Broken Images").click();
 
-        assertTrue(page.locator("text=Agile Testing Days").isVisible());
+        assertTrue(page.getByText("Agile Testing Days").isVisible());
     }
 
 }
